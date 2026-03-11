@@ -6,8 +6,14 @@ const submitCode = async (req, res) => {
   try {
 
     const { room, problem, code, language } = req.body
-
+    
     const userId = req.user._id
+
+    if (!room || !problem || !code) {
+      return res.status(400).json({
+        message: "Room, problem and code are required"
+      })
+    }
 
     // mock evaluation
     const status = Math.random() > 0.5 ? "Accepted" : "Wrong Answer"
@@ -18,7 +24,8 @@ const submitCode = async (req, res) => {
       problem,
       code,
       language,
-      status
+      status,
+      timeSubmitted: new Date()
     })
 
     res.json({
@@ -40,7 +47,7 @@ const submitCode = async (req, res) => {
 }
 
 
-// get user submissions
+// get submissions of a user
 const getUserSubmissions = async (req, res) => {
 
   try {

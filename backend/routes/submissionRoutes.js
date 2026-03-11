@@ -6,6 +6,6 @@ const protect = require("../middleware/authMiddleware")
 
 router.post("/", protect, submitCode)
 
-router.get("/user/:id", getUserSubmissions)
+router.get("/user/:id", protect, getUserSubmissions)
 
 module.exports = router

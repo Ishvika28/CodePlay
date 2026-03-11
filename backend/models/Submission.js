@@ -1,15 +1,44 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 
 const submissionSchema = new mongoose.Schema({
 
-  user: String,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
 
-  roomId: String,
+  room: {
+    type: String,
+    required: true
+  },
 
-  problem: String,
+  problem: {
+    type: String,
+    required: true
+  },
 
-  result: String
+  code: {
+    type: String,
+    required: true
+  },
 
-});
+  language: {
+    type: String,
+    default: "javascript"
+  },
 
-module.exports = mongoose.model("Submission", submissionSchema);
+  status: {
+    type: String,
+    enum: ["Accepted", "Wrong Answer"],
+    default: "Wrong Answer"
+  },
+
+  timeSubmitted: {
+    type: Date,
+    default: Date.now
+  }
+
+})
+
+module.exports = mongoose.model("Submission", submissionSchema)
