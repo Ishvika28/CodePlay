@@ -4,6 +4,9 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Dashboard from "./pages/Dashboard"
 import Profile from "./pages/Profile"
+import Leaderboard from "./pages/Leaderboard"
+import SubmitCode from "./pages/SubmitCode"
+
 
 function App() {
 
@@ -20,6 +23,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
 
         <Route path="/profile" element={<Profile />} />
+
+        <Route path="/submit/:roomCode" element={<SubmitCode />} />
+
+        <Route path="/leaderboard/:roomCode" element={<Leaderboard />} />
 
       </Routes>
 
