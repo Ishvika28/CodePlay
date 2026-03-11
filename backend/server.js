@@ -1,4 +1,5 @@
 const authRoutes = require("./routes/authRoutes");
+const submissionRoutes = require("./routes/submissionRoutes")
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -14,6 +15,8 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err) => console.log(err));
 
 app.use("/api/auth", authRoutes);
+
+app.use("/api/submissions", submissionRoutes)
 
 app.get("/", (req, res) => {
     res.send("Backend server running 🚀");
