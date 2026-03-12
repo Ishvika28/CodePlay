@@ -25,6 +25,10 @@ function App() {
 
         <Route path="/login" element={<Login />} />
 
+        <Route path="/submitcode" element={<SubmitCode />} />
+
+        <Route path="/leaderboard" element={<Leaderboard />} />
+
         <Route
           path="/dashboard"
           element={
