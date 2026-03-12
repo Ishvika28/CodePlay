@@ -5,9 +5,11 @@ import Signup from "./pages/Signup"
 import Dashboard from "./pages/Dashboard"
 import CreateRoom from "./pages/CreateRoom"
 import JoinRoom from "./pages/JoinRoom";
+import Room from "./pages/Room"
+import Problem from "./pages/Problem"
 import Profile from "./pages/Profile"
 import Leaderboard from "./pages/Leaderboard"
-import SubmitCode from "./pages/SubmitCode"
+import SubmitCode from "./components/SubmitCode"
 
 
 import ProtectedRoute from "./components/ProtectedRoute"
@@ -30,6 +32,10 @@ function App() {
         <Route path="/create-room" element={<CreateRoom />} />
 
         <Route path="/join-room" element={<JoinRoom />} />
+
+        <Route path="/room/:roomCode" element={<Room />} />
+
+        <Route path="/room/:roomCode/problem/:problemId" element={<Problem />} />
 
         <Route path="/submitcode" element={<SubmitCode />} />
 

@@ -1,10 +1,8 @@
 import { useState } from "react"
-import { useParams } from "react-router-dom"
 
-function SubmitCode(){
+function SubmitCode({ roomCode, problemId }){
 
   const [code,setCode] = useState("")
-  const { roomCode } = useParams()
 
   const submit = async () => {
 
@@ -21,7 +19,7 @@ function SubmitCode(){
 
       body:JSON.stringify({
         room: roomCode,
-        problem: "ProblemA",
+        problem: problemId,
         code: code,
         language: "javascript"
       })

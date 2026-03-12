@@ -14,9 +14,10 @@ const submissionSchema = new mongoose.Schema({
   },
 
   problem: {
-    type: String,
-    required: true
-  },
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "Problem",
+  required: true
+},
 
   code: {
     type: String,

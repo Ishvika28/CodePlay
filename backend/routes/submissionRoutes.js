@@ -1,8 +1,12 @@
 const express = require("express")
 const router = express.Router()
 
-const { submitCode, getUserSubmissions } = require("../controllers/submissionController")
 const protect = require("../middleware/authMiddleware")
+
+const {
+  submitCode,
+  getUserSubmissions
+} = require("../controllers/submissionController")
 
 router.post("/", protect, submitCode)
 
