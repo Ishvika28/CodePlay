@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Dashboard from "./pages/Dashboard"
+import CreateRoom from "./pages/CreateRoom"
+import JoinRoom from "./pages/JoinRoom";
 import Profile from "./pages/Profile"
 import Leaderboard from "./pages/Leaderboard"
 import SubmitCode from "./pages/SubmitCode"
@@ -24,6 +26,10 @@ function App() {
         <Route path="/signup" element={<Signup />} />
 
         <Route path="/login" element={<Login />} />
+
+        <Route path="/create-room" element={<CreateRoom />} />
+
+        <Route path="/join-room" element={<JoinRoom />} />
 
         <Route path="/submitcode" element={<SubmitCode />} />
 
