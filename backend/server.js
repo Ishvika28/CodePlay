@@ -1,6 +1,8 @@
 const authRoutes = require("./routes/authRoutes");
 const submissionRoutes = require("./routes/submissionRoutes")
 const leaderboardRoutes = require("./routes/leaderboardRoutes")
+const roomRoutes = require("./routes/roomRoutes")
+const problemRoutes = require("./routes/problemRoutes")
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -16,6 +18,8 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err) => console.log(err));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/rooms", roomRoutes)
+app.use("/api/problems", problemRoutes)
 
 app.use("/api/submissions", submissionRoutes)
 
